@@ -64,18 +64,18 @@ export class PayPal {
 			body: order,
 			method: 'POST',
 		})
-		return result.data
+		return result
 	}
 
 	/** Capture order.
 	 * {@link https://developer.paypal.com/docs/api/orders/v2/#orders_capture PayPal Docs}
 	 */
 	async captureOrder(orderId: string) {
-		const { data } = await this.fetch(
+		const result = await this.fetch(
 			`/v2/checkout/orders/${orderId}/capture`,
-			{ method: 'POST' }
+			{ body: {}, method: 'POST' }
 		)
-		return data
+		return result
 	}
 
 	/** Verify webhook signature.
