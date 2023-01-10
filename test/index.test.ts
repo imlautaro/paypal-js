@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { createClient } from '../src'
+import { createClient, PayPal } from '../src'
 import * as dotenv from 'dotenv'
 
 dotenv.config()
@@ -13,6 +13,11 @@ describe('paypal-js', async () => {
 
 	it('uses sandbox api endpoint', () => {
 		expect(client.api).toBe('https://api-m.sandbox.paypal.com')
+	})
+
+	it('uses production api endpoint', () => {
+		const client = new PayPal(clientId, clientSecret, false)
+		expect(client.api).toBe('https://api-m.paypal.com')
 	})
 
 	it('get access token', async () => {
