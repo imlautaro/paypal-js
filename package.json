@@ -1,5 +1,5 @@
 {
-	"name": "paypal-js",
+	"name": "@imlautaro/paypal-js",
 	"version": "0.0.1",
 	"license": "MIT",
 	"type": "module",
@@ -20,7 +20,7 @@
 		"build": "unbuild",
 		"dev": "vitest dev",
 		"prepack": "unbuild",
-		"release": "pnpm test && git push --follow-tags && pnpm publish",
+		"release": "pnpm test && git push --follow-tags && pnpm publish --access=public",
 		"test": "vitest run --coverage"
 	},
 	"devDependencies": {
