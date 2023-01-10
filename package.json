@@ -1,0 +1,37 @@
+{
+	"name": "paypal-js",
+	"version": "0.0.1",
+	"license": "MIT",
+	"type": "module",
+	"exports": {
+		".": {
+			"types": "./dist/index.d.ts",
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		}
+	},
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.ts",
+	"files": [
+		"dist"
+	],
+	"scripts": {
+		"build": "unbuild",
+		"dev": "vitest dev",
+		"prepack": "unbuild",
+		"release": "pnpm test && git push --follow-tags && pnpm publish",
+		"test": "vitest run --coverage"
+	},
+	"devDependencies": {
+		"@types/node": "^18.11.18",
+		"@vitest/coverage-c8": "^0.27.0",
+		"dotenv": "^16.0.3",
+		"unbuild": "^1.0.2",
+		"vitest": "^0.27.0"
+	},
+	"dependencies": {
+		"ofetch": "^1.0.0"
+	},
+	"packageManager": "pnpm@7.23.0"
+}
