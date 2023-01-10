@@ -4,23 +4,23 @@ Install package:
 
 ```sh
 # npm
-npm install @imlautaro/paypal-js
+npm install @michilabs/paypal-js
 
 # yarn
-yarn add @imlautaro/paypal-js
+yarn add @michilabs/paypal-js
 
 # pnpm
-pnpm install @imlautaro/paypal-js
+pnpm install @michilabs/paypal-js
 ```
 
 Import:
 
 ```js
 // ESM
-import { createClient } from '@imlautaro/paypal-js'
+import { createClient } from '@michilabs/paypal-js'
 
 // CommonJS
-const { createClient } = require('@imlautaro/paypal-js')
+const { createClient } = require('@michilabs/paypal-js')
 ```
 
 ## 💻 Development

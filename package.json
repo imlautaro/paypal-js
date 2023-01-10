@@ -1,5 +1,5 @@
 {
-	"name": "@imlautaro/paypal-js",
+	"name": "@michilabs/paypal-js",
 	"version": "0.0.1",
 	"license": "MIT",
 	"type": "module",
@@ -20,7 +20,7 @@
 		"build": "unbuild",
 		"dev": "vitest dev",
 		"prepack": "unbuild",
-		"release": "pnpm test && git push --follow-tags && pnpm publish --access=public",
+		"release": "pnpm test && git push --follow-tags && pnpm publish",
 		"test": "vitest run --coverage"
 	},
 	"devDependencies": {
@@ -32,6 +32,9 @@
 	},
 	"dependencies": {
 		"ofetch": "^1.0.0"
+	},
+	"publishConfig": {
+		"access": "public"
 	},
 	"packageManager": "pnpm@7.23.0"
 }
