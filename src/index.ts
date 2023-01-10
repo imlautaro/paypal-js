@@ -60,7 +60,10 @@ export class PayPal {
 	 * {@link https://developer.paypal.com/docs/api/orders/v2/#orders_create PayPal Docs}
 	 */
 	async createOrder(order: any) {
-		const result = await this.fetch('/v2/checkout/orders', { body: order })
+		const result = await this.fetch('/v2/checkout/orders', {
+			body: order,
+			method: 'POST',
+		})
 		return result.data
 	}
 
@@ -69,7 +72,8 @@ export class PayPal {
 	 */
 	async captureOrder(orderId: string) {
 		const { data } = await this.fetch(
-			`/v2/checkout/orders/${orderId}/capture`
+			`/v2/checkout/orders/${orderId}/capture`,
+			{ method: 'POST' }
 		)
 		return data
 	}
@@ -105,6 +109,7 @@ export class PayPal {
 				webhook_id: webhookId,
 				webhook_event: body,
 			},
+			method: 'POST',
 		})
 
 		return verification_status === 'SUCCESS'
