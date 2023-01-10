@@ -24,4 +24,24 @@ describe('paypal-js', async () => {
 		const accessToken = await client.getAccessToken()
 		expect(accessToken).toBeTruthy()
 	})
+
+	it('creates an order', async () => {
+		const order = await client.createOrder({
+			intent: 'CAPTURE',
+			purchase_units: [
+				{
+					amount: {
+						currency_code: 'USD',
+						value: 25,
+					},
+				},
+			],
+			application_context: {
+				brand_name: 'Test Store',
+				shipping_preference: 'NO_SHIPPING',
+			},
+		})
+
+		expect(order.id).toBeTruthy()
+	})
 })
